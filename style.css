@@ -102,15 +102,19 @@ h6 {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
 
-
+@font-face {
+  font-family: "Canela Serif Font";
+  src: url(./fonts/CanelaText-Bold-Trial.otf);
+}
 
 /* --------------------------------- header ------------------------------------- */
 
 
 .header__container {
   position: absolute;
-  left: 140px;
+  left: 45%;
   width: 1200px;
+  transform: translateX(-48%);
 }
 
 .header__nav {
@@ -119,13 +123,20 @@ h6 {
   justify-content: space-between;
 }
 
+.header__logo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
 .about__store {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   width: 40%;
 }
 
 .item__link {
+  margin-left: 50px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -135,7 +146,7 @@ h6 {
 
 .for__users {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   width: 30%;
 }
 
@@ -163,6 +174,7 @@ h6 {
 }
 
 .taste__the__wild__title {
+  font-family: "Canela Serif Font";
   color: hsl(0, 0%, 0%);
   text-align: center;
   font-size: 4.5rem;
@@ -176,4 +188,517 @@ h6 {
   position: absolute;
   bottom: 5px;
   background-color: transparent;
+}
+
+
+/* ------------------- wildly loved section --------------------------------*/
+
+
+.wildly__loved {
+  background-color: #ED7B49;
+  height: 150vh;
+}
+
+.wildly__loved__container {}
+
+.wildly__loved__row {
+  margin: 0 auto;
+  width: 1000px;
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.badge__img {}
+
+.badge__circle {
+  position: relative;
+}
+
+.badge__main {
+  left: 20px;
+  top: 120px;
+  position: absolute;
+}
+
+.wildly__loved__info__block {
+  width: 50%;
+}
+
+.wildly__loved__title {
+  font-family: "Canela Serif Font";
+  font-size: 5.3rem;
+  font-style: normal;
+  line-height: 5rem;
+  opacity: 0;
+}
+
+.wildly__loved__text {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.wildly__loved__slider {}
+
+.wildly__loved__slider__row {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.product__cart {
+  margin: 80px;
+}
+
+.product__card__backgroung {
+  position: relative;
+  padding: 100px 0px;
+  border-radius: 200px;
+  background: #72A080;
+}
+
+.wildly__loved__product__img {
+  position: relative;
+  width: 400px;
+  z-index: 3;
+}
+
+.card__hover__img__bg {
+  position: absolute;
+  height: 100%;
+  width: 400px;
+  border-radius: 200px;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: all .3s ease;
+}
+
+.product__card__backgroung:hover {
+  .card__hover__img__bg {
+    opacity: 1;
+  }
+}
+
+.product__card__info__block {
+  position: relative;
+  margin-top: -110px;
+  z-index: 1000;
+}
+
+.product__card__info__block__container {}
+
+.product__card__title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  font-family: "Canela Serif Font";
+
+}
+
+.product__cost {
+  margin: 20px 0px;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 2.6325rem;
+}
+
+.product__card__button {
+  letter-spacing: .1rem;
+  font-size: 1.4rem;
+  padding: 20px 40px;
+  width: 50%;
+  border-radius: 2.25rem;
+  background: #A95D50;
+}
+
+
+/* ------------------------------------------------------------------------- */
+
+.our__wild__way {
+  padding: 500px 0;
+  background-color: hsl(18, 82%, 61%);
+  height: 150vh;
+}
+
+.our__wild__way__container {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.our__wild__way__info__block {
+  width: 100%;
+}
+
+.our__wild__way__title {
+  font-family: "Canela Serif Font";
+  font-size: 6rem;
+  line-height: 7rem;
+}
+
+.our__wild__way__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 40px 0px;
+}
+
+.our__wild__way__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 10px 30px;
+}
+
+.slider__card__block {
+  margin-left: 200px;
+  padding: 100px;
+  width: 60%;
+  position: relative;
+  top: -200px;
+  right: 200px;
+}
+
+.first__img {
+  position: absolute;
+  width: 500px;
+  z-index: 3;
+}
+
+.second__img {
+  rotate: -20deg;
+  position: absolute;
+  width: 500px;
+  z-index: 2;
+}
+
+.third__img {
+  rotate: 20deg;
+  position: absolute;
+  width: 500px;
+  z-index: 1;
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+
+.wild__like__a__nut {
+  padding: 200px 0px 0px;
+  background-color: hsl(18, 82%, 61%);
+
+}
+
+.wild__like__a__nut__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.almond__block {
+  width: 45%;
+  position: relative;
+  border-radius: 0rem 13.75rem 0rem 0rem;
+  background-color: #BE5A4B;
+  padding: 100px 90px 200px 200px;
+
+}
+
+.almond__block__title {
+  font-family: "Canela Serif Font";
+  font-size: 5.5rem;
+  line-height: 5.84375rem;
+  margin-bottom: 100px;
+}
+
+.almond__block__product__title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 3.15rem;
+  margin-bottom: 40px;
+}
+
+.almond__block__product__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  width: 50%;
+}
+
+.almond__block__product__cost {
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: .1rem;
+  margin: 40px 0px;
+}
+
+.almond__block__buy__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 10px 30px;
+}
+
+.almond__img {
+  right: 30px;
+  bottom: 100px;
+  position: absolute;
+  z-index: 2;
+}
+
+.goat__img {
+  right: 40px;
+  top: 300px;
+  position: absolute;
+  z-index: 1;
+}
+
+.another__nuts__list__block {}
+
+.another__nuts__title {
+  width: 50%;
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  margin: 150px 0px 50px;
+}
+
+.nuts {
+  width: 200px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 3.15rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+}
+
+
+/* --------------------------- worlds from soul section ------------------------------------ */
+
+
+.words__from__soul {
+  height: 70vh;
+  padding: 100px 0px;
+  background: #E9A8C6;
+}
+
+.words__from__soul__container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.worlds__from__soul__title {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-align: center;
+  width: 11%;
+  line-height: 2rem;
+}
+
+.blocks__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.block__img {
+  width: 25%;
+}
+
+.block__title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 30px 0px;
+  font-weight: 700;
+}
+
+.block__text {
+  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem; 
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+
+.the__concept__store {
+  padding: 400px 0;
+  background-color: hsl(351, 78%, 82%);
+  height: 150vh;
+  position: relative;
+}
+
+.the__concept__store__container {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.the__concept__store__info__block {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.the__concept__store__title {
+  font-family: "Canela Serif Font";
+  font-size: 6rem;
+  line-height: 7rem;
+}
+
+.the__concept__store__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 40px 0px;
+}
+
+.the__concept__store__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 10px 30px;
+}
+
+.the__concept__store__badge__img {
+  position: absolute;
+  top: 200px;
+}
+.the__concept__store__badge__circle {
+  position: relative;
+}
+.the__concept__store__badge__main {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+
+.wild__halva {
+  padding: 200px 0px 0px;
+  background-color: hsl(351, 78%, 82%);
+
+}
+
+.wild__halva__container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.halva__block{
+  width: 45%;
+  position: relative;
+  border-radius: 0rem 13.75rem 0rem 0rem;
+  background: #ABAFD6;
+  padding: 100px 90px 200px 200px;
+
+}
+
+.halva__block__title {
+  font-family: "Canela Serif Font";
+  font-size: 5.5rem;
+  line-height: 5.84375rem;
+  margin-bottom: 100px;
+}
+
+.halva__block__product__title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 3.15rem;
+  margin-bottom: 40px;
+}
+
+.halva__block__product__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  width: 50%;
+}
+
+.halva__block__product__cost {
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: .1rem;
+  margin: 40px 0px;
+}
+
+.halva__block__buy__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 10px 30px;
+}
+
+.halva__img {
+  right: 30px;
+  bottom: 100px;
+  position: absolute;
+  z-index: 2;
+}
+
+.gift__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 350px;
+  background: #EC4844;
+  padding: 90px;
+  bottom: 0;
+}
+
+.gift__block__title {
+  width: 50%;
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  margin: 100px 0px 50px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.gift__block__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 20px 40px;
+}
+
+.gift__block__img {
+  width: 39%;
 }
