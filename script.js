@@ -3,7 +3,7 @@
 const badgeCircle = document.querySelector('.badge__circle');
 const wildlyLovedTitle = document.querySelector('.wildly__loved__title');
 const wildlyLovedText = document.querySelector('.wildly__loved__text')
-const secondBadgeCircle = document.querySelector('.the__concept__store__badge__circle')
+const secondBadgeCircle = document.querySelectorAll('.the__concept__store__badge__circle')
 
 
 const badgeCircleAnim = gsap.to(badgeCircle, {
@@ -95,39 +95,23 @@ const cardsItems = [
   },
 ];
 
-// console.log(cardsItems.length)
-
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.querySelector('.wildly__loved__slider__row');
   cardsItems.forEach(item => {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add('product__cart');
 
-    const backgroundDiv = createElement('div', { class: 'product__card__backgroung', 'background-color': item.backgroundColor }, [
+    const backgroundDiv = createElement('div', { class: 'product__card__backgroung', style: `background-color: ${item.backgroundColor}` }, [
       createElement('img', { src: item.jarImg, class: 'wildly__loved__product__img' }),
       createElement('img', { src: item.backgroundHoverImg, class: 'card__hover__img__bg' })
     ]);
     itemDiv.append(backgroundDiv);
 
-    // backgroundDiv.classList.add('product__card__backgroung');
-    // backgroundDiv.style.backgroundColor = item.btnColor;
-    // backgroundDiv.innerHTML += `<img src=${item.jarImg} alt="" class="wildly__loved__product__img">`
-    // backgroundDiv.innerHTML += `<img src=${item.backgroundHoverImg} alt="" class="card__hover__img__bg">`
-    // itemDiv.append(backgroundDiv)
-
-    // const infoBlockDiv = document.createElement("div")
-    // infoBlockDiv.classList.add('product__card__info__block')
-
-    // infoBlockDiv.innerHTML += ` <h3 class="product__card__title"> ${item.cardTitle} </h3>`
-    // infoBlockDiv.innerHTML += ` <p class="product__cost"> ${item.productCost} </p>`
-    // infoBlockDiv.innerHTML += ` <button class="product__card__button"  style="background-color:${item.btnColor}">Buy Now!</button>`
-
     const infoBlockDiv = createElement('div', { class: 'product__card__info__block' }, [
       createElement('h3', { class: 'product__card__title' }, item.cardTitle),
       createElement('p', { class: 'product__cost' }, item.productCost),
-      createElement('button', { class: 'product__card__button', 'background-color': item.btnColor }, 'Buy Now!'),
+      createElement('button', { class: 'product__card__button', style: `background-color: ${item.btnColor}` }, 'Buy Now!'),
     ]);
-
     itemDiv.append(infoBlockDiv);
     cardsContainer.append(itemDiv);
   })

@@ -152,7 +152,7 @@ h6 {
 
 
 
-/* ------------------------------ taste the wild ------------------------------- */
+/* ------------------------------ taste the wild section ------------------------------- */
 
 
 
@@ -161,8 +161,7 @@ h6 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
-  padding-top: 200px;
+  padding: 200px 0px;
 }
 
 .taste__the__wild__container {
@@ -182,24 +181,25 @@ h6 {
   font-weight: 400;
   line-height: 6rem;
   width: 40%;
+  margin: 0px 0px 100px;
+  padding-bottom: 120px;
 }
 
 .taste__the__wild__down__btn {
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   background-color: transparent;
 }
+
 
 
 /* ------------------- wildly loved section --------------------------------*/
 
 
+
 .wildly__loved {
   background-color: #ED7B49;
-  height: 150vh;
 }
-
-.wildly__loved__container {}
 
 .wildly__loved__row {
   margin: 0 auto;
@@ -210,8 +210,6 @@ h6 {
   justify-content: space-between;
   position: relative;
 }
-
-.badge__img {}
 
 .badge__circle {
   position: relative;
@@ -243,8 +241,6 @@ h6 {
   margin-left: 10px;
   opacity: 0;
 }
-
-.wildly__loved__slider {}
 
 .wildly__loved__slider__row {
   display: flex;
@@ -292,14 +288,11 @@ h6 {
   z-index: 1000;
 }
 
-.product__card__info__block__container {}
-
 .product__card__title {
   font-size: 3rem;
   font-weight: 700;
   line-height: 4rem;
   font-family: "Canela Serif Font";
-
 }
 
 .product__cost {
@@ -319,12 +312,12 @@ h6 {
 }
 
 
-/* ------------------------------------------------------------------------- */
+/* ----------------------------- our wild way section ---------------------------------------- */
+
 
 .our__wild__way {
   padding: 500px 0;
   background-color: hsl(18, 82%, 61%);
-  height: 150vh;
 }
 
 .our__wild__way__container {
@@ -390,18 +383,16 @@ h6 {
 }
 
 
-/* ----------------------------------------------------------------------- */
+/* ---------------------------  wild like a nut section ---------------------------------- */
 
 
 .wild__like__a__nut {
   padding: 200px 0px 0px;
   background-color: hsl(18, 82%, 61%);
-
 }
 
 .wild__like__a__nut__container {
   display: flex;
-  justify-content: space-between;
 }
 
 .almond__block {
@@ -410,7 +401,7 @@ h6 {
   border-radius: 0rem 13.75rem 0rem 0rem;
   background-color: #BE5A4B;
   padding: 100px 90px 200px 200px;
-
+  margin-right: 60px;
 }
 
 .almond__block__title {
@@ -450,21 +441,16 @@ h6 {
   padding: 10px 30px;
 }
 
-.almond__img {
-  right: 30px;
-  bottom: 100px;
+.almond__img__wrapper {
+  right: 11px;
+  bottom: 26px;
   position: absolute;
-  z-index: 2;
 }
 
 .goat__img {
-  right: 40px;
-  top: 300px;
-  position: absolute;
-  z-index: 1;
+  margin-right: -260px;
+  margin-top: -120px;
 }
-
-.another__nuts__list__block {}
 
 .another__nuts__title {
   width: 50%;
@@ -486,11 +472,10 @@ h6 {
 }
 
 
-/* --------------------------- worlds from soul section ------------------------------------ */
+/* --------------------------- worlds from soul section ----------------------------------- */
 
 
 .words__from__soul {
-  height: 70vh;
   padding: 100px 0px;
   background: #E9A8C6;
 }
@@ -538,17 +523,16 @@ h6 {
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5rem; 
+  line-height: 1.5rem;
 }
 
 
-/* -------------------------------------------------------------------------------- */
+/* ------------------------------- the concept store section --------------------------------------------- */
 
 
 .the__concept__store {
   padding: 400px 0;
   background-color: hsl(351, 78%, 82%);
-  height: 150vh;
   position: relative;
 }
 
@@ -590,37 +574,36 @@ h6 {
   position: absolute;
   top: 200px;
 }
+
 .the__concept__store__badge__circle {
   position: relative;
 }
+
 .the__concept__store__badge__main {
   position: absolute;
   bottom: 40px;
   left: 40px;
 }
 
-/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ wild halva section ------------------------------------ */
 
 
 .wild__halva {
   padding: 200px 0px 0px;
   background-color: hsl(351, 78%, 82%);
-
 }
 
 .wild__halva__container {
   display: flex;
-  justify-content: space-between;
-  position: relative;
 }
 
-.halva__block{
+.halva__block {
   width: 45%;
   position: relative;
   border-radius: 0rem 13.75rem 0rem 0rem;
   background: #ABAFD6;
   padding: 100px 90px 200px 200px;
-
 }
 
 .halva__block__title {
@@ -645,7 +628,7 @@ h6 {
 }
 
 .halva__block__product__cost {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 100;
   letter-spacing: .1rem;
   margin: 40px 0px;
@@ -660,11 +643,10 @@ h6 {
   padding: 10px 30px;
 }
 
-.halva__img {
-  right: 30px;
+.halva__img img {
+  right: 0px;
   bottom: 100px;
   position: absolute;
-  z-index: 2;
 }
 
 .gift__block {
@@ -672,11 +654,10 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 350px;
   background: #EC4844;
-  padding: 90px;
+  padding: 75px;
   bottom: 0;
+  margin-left: 30px;
 }
 
 .gift__block__title {
@@ -700,5 +681,246 @@ h6 {
 }
 
 .gift__block__img {
-  width: 39%;
+  width: 35%;
+}
+
+
+/* -------------------------------- the five treasures section ------------------------------------------ */
+
+
+.the__five__treasures {
+  padding: 400px 0;
+  background-color: hsl(351, 78%, 82%);
+  position: relative;
+}
+
+.the__five__treasures__container {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.the__five__treasures__info__block {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.the__five__treasures__title {
+  font-family: "Canela Serif Font";
+  font-size: 6rem;
+  line-height: 7rem;
+}
+
+.the__five__treasures__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 40px 0px;
+  width: 70%;
+}
+
+.the__five__treasures__btn {
+  border-radius: 2rem;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  background: #000;
+  color: white;
+  padding: 10px 30px;
+}
+
+.the__concept__store__badge__img {
+  position: absolute;
+  top: 200px;
+}
+
+.the__concept__store__badge__circle {
+  position: relative;
+}
+
+.the__concept__store__badge__main {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+
+/* --------------------------------- wild recipes section ---------------------------------------- */
+
+
+.wild__recipes {
+  background-color: hsl(351, 78%, 82%);
+  padding-bottom: 100px;
+}
+
+.wild__recipes__container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wild__recipes__info__block {
+  margin: 0 auto;
+}
+
+.wild__recipes__title {
+  font-family: "Canela Serif Font";
+  font-size: 5.3rem;
+  font-style: normal;
+  line-height: 5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wild__recipes__text {
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-left: 10px;
+}
+
+.wild__resipes__slider__row {
+  margin: 100px 0px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.wild__recipes__card {
+  margin: 0px 30px;
+}
+
+.card__img {
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.card__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.card__title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 3.15rem;
+}
+
+
+
+/* ------------------------- footer ---------------------------------- */
+
+
+
+.footer {
+  background-color: #BE5A4B;
+  padding: 300px 0px 50px;
+  position: relative;
+}
+
+.footer__logo {
+  position: absolute;
+  top: 100px;
+  left: 46%;
+}
+
+.information__container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.stay__wild__title {
+  font-family: "Canela Serif Font";
+  font-size: 5rem;
+  margin-bottom: 40px;
+}
+
+.email__form {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.icons {
+  margin-bottom: 40px;
+}
+
+.icon {
+  margin-right: 20px;
+}
+
+.pay__method__block {
+  margin-bottom: 40px;
+}
+
+small p {
+  letter-spacing: .1rem;
+  line-height: 2rem;
+}
+
+small a {
+  color: black;
+  font-style: italic;
+}
+
+.about__company__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.about__title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.about__list a {
+  color: #000;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+.about__list li {
+  margin-bottom: 10px
+}
+
+.about__list li:last-child {
+  margin-bottom: 25px;
+}
+
+.footer__bottom__running__row {
+  display: flex;
+  justify-content: space-around;
+  width: 2500px;
+  overflow-x: scroll;
+}
+
+.email-input {
+  border: none;
+  border-bottom: 2px solid #000000;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  background-color: transparent;
+}
+
+.email-input::placeholder {
+  color: #000000;
 }
