@@ -1,4 +1,5 @@
 
+// --------------------------------------------------------
 
 const badgeCircle = document.querySelector('.badge__circle');
 const wildlyLovedTitle = document.querySelector('.wildly__loved__title');
@@ -25,7 +26,6 @@ const wildlyLovedTextAnim = tl.to(wildlyLovedText, {
 
 
 // ----------------------------------------------
-
 
 const cardsItems = [
 
@@ -97,7 +97,7 @@ const cardsItems = [
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.querySelector('.wildly__loved__slider__row');
-  cardsItems.forEach(item => {
+  cardsItems.forEach((item) => {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add('product__cart');
 
@@ -114,23 +114,89 @@ document.addEventListener("DOMContentLoaded", () => {
     ]);
     itemDiv.append(infoBlockDiv);
     cardsContainer.append(itemDiv);
+  });
+  const STAGGER = 0.1
+  const DURATION = 1
+  const OFFSET = 0
+  const BOXES = gsap.utils.toArray('.product__cart')
+
+  const LOOP = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    ease: 'none',
   })
+
+  const SHIFTS = [...BOXES, ...BOXES, ...BOXES]
+
+  SHIFTS.forEach((BOX, index) => {
+    const BOX_TL = gsap
+      .timeline()
+      .set(BOX, {
+        xPercent: 250,
+        opacity: 1,
+        scale: 1,
+      })
+
+      .fromTo(
+        BOX,
+        {
+          xPercent: 350,
+        },
+        {
+          xPercent: -1000,
+          duration: 1,
+          immediateRender: false,
+          ease: "power1.in",
+        },
+        0
+      )
+
+    LOOP.add(BOX_TL, index * STAGGER)
+  })
+
+  const CYCLE_DURATION = STAGGER * BOXES.length
+  const START_TIME = CYCLE_DURATION + (DURATION * 0.5) + OFFSET
+  const END_TIME = START_TIME + CYCLE_DURATION
+
+  const pauseAnim = gsap.fromTo(LOOP, {
+    totalTime: START_TIME,
+  },
+    {
+      paused: false,
+      totalTime: END_TIME,
+      duration: 30,
+      ease: 'none',
+      repeat: -1,
+    })
+
+  BOXES.forEach(BOX => {
+    BOX.addEventListener('mouseenter', () => {
+      pauseAnim.pause();
+    });
+
+    BOX.addEventListener('mouseleave', () => {
+      pauseAnim.play();
+    });
+  });
 });
+
 
 function createElement(tag, attrs = {}, children = []) {
   const elem = document.createElement(tag);
-
   for (let attr in attrs) {
     const value = attrs[attr];
     elem.setAttribute(attr, value);
   }
-
   if (!Array.isArray(children)) {
     children = [children];
   }
-
   children.forEach(child => elem.append(child));
   return elem;
 }
+
+// -------------------------------------------------------------
+
+
+
 
 
