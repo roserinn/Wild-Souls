@@ -1,13 +1,54 @@
+
+
 gsap.registerPlugin(ScrollTrigger);
 
-// --------------------------------------------------------
+// ----------------------- main Section Header & Title animations --------------------------
 
+
+const header = document.querySelectorAll('.header__container .header__nav')
+const title = document.querySelectorAll('.main__title .title__row')
+const downBtn = document.querySelector('.taste__the__wild__down__btn')
+
+const headerAnim = gsap.from(header, {
+  opacity: 0,
+  y: -100,
+  ease: 'back'
+})
+
+const titleAnim = gsap.from(title, {
+  y: 50,
+  opacity: 0,
+  stagger: .3,
+  delay: .4
+})
+
+const appearAnimation = gsap.fromTo(downBtn, {
+  opacity: 0,
+  y: 10,
+  delay: 3
+}, {
+  opacity: 1,
+  y: 0,
+  duration: 1,
+  onComplete: function () {
+    gsap.to(downBtn, {
+      y: '+=5',
+      yoyo: true,
+      repeat: -1,
+      ease: 'power1.inOut',
+    });
+  },
+});
+
+
+// --------------------- Wildly Loved Section Animations -------------------- 
 
 const badgeCircle = document.querySelector('.badge__circle');
 const wildlyLovedTitle = document.querySelector('.wildly__loved__title');
 const wildlyLovedText = document.querySelector('.wildly__loved__text')
 const secondBadgeCircle = document.querySelectorAll('.the__concept__store__badge__circle')
 
+// badge circles animation on sections: Wildly Loved, The Concept Store, The Five Treasures
 
 const badgeCircleAnim = gsap.to(badgeCircle, {
   duration: 20, rotate: 360, ease: 'linear', repeat: -1
@@ -16,18 +57,34 @@ const secondBadgeCircleAnim = gsap.to(secondBadgeCircle, {
   duration: 20, rotate: 360, ease: 'linear', repeat: -1
 })
 
-const tl = gsap.timeline({ delay: .3 });
+// text animation 
 
-const wildlyLovedTitleAnim = tl.to(wildlyLovedTitle, {
-  delay: .3, opacity: 1, ease: 'linear'
+const wildlyLovedTitleAnim = gsap.to(wildlyLovedTitle, {
+  delay: .2, opacity: 1, ease: 'linear', paused: true
 })
 
-const wildlyLovedTextAnim = tl.to(wildlyLovedText, {
-  y: 40, opacity: 1, ease: 'back',
+const wildlyLovedTextAnim = gsap.to(wildlyLovedText, {
+  delay: .5, y: 40, opacity: 1, ease: 'back', paused: true
 })
 
+ScrollTrigger.create({
+  trigger: ".wildly__loved__title",
+  start: 'top 100%',
+  end: 'bottom 100%',
+  markers: true,
+  onEnter: () => {
+    wildlyLovedTitleAnim.play();
+    wildlyLovedTextAnim.play();
+  },
+  onLeaveBack: () => {
+    wildlyLovedTitleAnim.reverse();
+    wildlyLovedTextAnim.reverse();
+  },
+});
 
-// ----------------------------------------------
+
+// --------------------- Runnimg row Animation ------------------------
+
 
 const cardsItems = [
 
@@ -196,38 +253,40 @@ function createElement(tag, attrs = {}, children = []) {
   return elem;
 }
 
-// -------------------------------------------------------------
 
+// ----------------------------- Our Wild Way section cards anim --------------------------------
 
 
 const imgsSliderCardBlock = document.querySelectorAll('.slider__card__block img');
 
 function cardsAppearance(imgsArray) {
   imgsArray.forEach((img, index) => {
-    gsap.from(img, {
-      x: 400,
-      opacity: 0,
-      duration: 1,
-      delay: index * .7
+    gsap.to(img, {
+      x: -200,
+      opacity: 1,
+      duration: .6,
+      delay: index * .5
     });
   })
 }
-cardsAppearance(imgsSliderCardBlock);
+
 
 let clickFlag = false;
 function cardsAnim(imgsArray) {
 
+  const animArr = []
   imgsArray.forEach((img, index) => {
     const imgAnim = gsap.to(img, { x: 400, stagger: 1, opacity: 0, paused: true });
     const cardsRotateAnim = gsap.to(img, { rotate: 0, duration: 0.3, paused: true });
+    animArr.push(imgAnim)
+    animArr.push(cardsRotateAnim)
 
     img.addEventListener('click', () => {
+      imgAnim.play();
       if (index === imgsArray.length - 1) {
-          imgAnim.reverse();
-          cardsRotateAnim.reverse();
-          cardsAppearance(imgsSliderCardBlock);
-      } else {
-          imgAnim.play();
+        animArr.forEach(item => {
+          item.reverse();
+        })
       }
       clickFlag = true;
     });
@@ -237,55 +296,121 @@ function cardsAnim(imgsArray) {
         gsap.to(img, { rotate: 0, duration: 0.3 });
         cardsRotateAnim.play();
       }
+      clickFlag = false
     });
   });
 }
-
 cardsAnim(imgsSliderCardBlock);
 
 
-// let clickFlag = false;
-// function handleMouseEnter(element) {
-//   if (clickFlag) {
-//     gsap.to(element, { rotate: 0, duration: 0.3, delay: 0.2 });
-//   }
-// }
-// secondImg.addEventListener('mouseenter', () => {
-//   handleMouseEnter(secondImg);
-// });
-// thirdImg.addEventListener('mouseenter', () => {
-//   handleMouseEnter(thirdImg);
-// });
-// firstImg.addEventListener('click', () => {
-//   clickFlag = true;
-//   setTimeout(() => {
-//     clickFlag = false;
-//     gsap.to(secondImg, { rotate: 0, duration: 0.3 });
-//     gsap.to(thirdImg, { rotate: 0, duration: 0.3, delay: .5});
-//   }, 500);
-// });
-// // const reverseAnim = (img) => {
-// //   gsap.from(img, {x: 400, stagger: 1, opacity: 0})
-// // }
-//   const Anim = (img)=> {
-//   gsap.to(img, {x: 400, stagger: 1, opacity: 0})
-// }
-// firstImg.addEventListener('click', ()=> {
-//   Anim(firstImg)
-// })
-// secondImg.addEventListener('click', ()=> {
-//   Anim(secondImg)
-// })
-// function cardsAppearanceOnClick(imgsArray) {
-//       gsap.from(imgsArray, {
-//     x: 400,
-//     opacity: 1,
-//     duration: 1,
-//   });
-// }
-// thirdImg.addEventListener('click', (event)=> {
-// if (event.target === thirdImg) {
-//   cardsAppearanceOnClick(sliderCardBlock)
-// console.log('click')
-// }
-// })
+
+// info block animation 
+
+const ourWildWayTitle = document.querySelector('.our__wild__way__title');
+const ourWildWayText = document.querySelector('.our__wild__way__text');
+const ourWildWayButton = document.querySelector('.our__wild__way__btn');
+
+const ourWildWayTitleAnim = gsap.from(ourWildWayTitle, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+})
+
+const ourWildWayTextAnim = gsap.from(ourWildWayText, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+  delay: .2,
+}, ".1")
+
+const ourWildWayButtonAnim = gsap.from(ourWildWayButton, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  duration: 1,
+  paused: true
+})
+
+ScrollTrigger.create({
+  trigger: ".our__wild__way",
+  start: 'top 20%',
+  end: 'bottom 80%',
+  markers: true,
+  onEnter: () => {
+    ourWildWayTitleAnim.play();
+    ourWildWayTextAnim.play();
+    ourWildWayButtonAnim.play();
+    cardsAppearance(imgsSliderCardBlock);
+  },
+  onLeaveBack: () => {
+    ourWildWayTitleAnim.reverse();
+    ourWildWayTextAnim.reverse();
+    ourWildWayButtonAnim.reverse();
+
+  },
+});
+
+
+// --------------------    the Concept Store section animation  ----------------------------------
+
+
+const imgsSliderCardBlock2 = document.querySelectorAll('.slider__card__block2 img');
+
+cardsAppearance(imgsSliderCardBlock2)
+cardsAnim(imgsSliderCardBlock2);
+
+// info block animation
+
+const theConceptStoreTitle = document.querySelector('.the__concept__store__title');
+const theConceptStoreText = document.querySelector('.the__concept__store__text');
+const theConceptStoreButton = document.querySelector('.the__concept__store__btn');
+
+const theConceptStoreTitleAnim = gsap.from(theConceptStoreTitle, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+})
+
+const theConceptStoreTextAnim = gsap.from(theConceptStoreText, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+  delay: .2,
+}, ".1")
+
+const theConceptStoreButtonAnim = gsap.from(theConceptStoreButton, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  duration: 1,
+  paused: true
+})
+
+ScrollTrigger.create({
+  trigger: ".the__concept__store",
+  start: 'top 100%',
+  end: 'bottom 80%',
+  markers: true,
+  onEnter: () => {
+    theConceptStoreTitleAnim.play();
+    theConceptStoreTextAnim.play();
+    theConceptStoreButtonAnim.play();
+    cardsAppearance(imgsSliderCardBlock2);
+  },
+  onLeaveBack: () => {
+    theConceptStoreTitleAnim.reverse();
+    theConceptStoreTextAnim.reverse();
+    theConceptStoreButton.reverse();
+
+  },
+});
+
+
+const imgsSliderCardBlock3 = document.querySelectorAll('.slider__card__block3 img')
+cardsAppearance(imgsSliderCardBlock3)
+cardsAnim(imgsSliderCardBlock3);
+

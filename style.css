@@ -98,6 +98,7 @@ h6 {
   height: 100%;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; 
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
@@ -182,13 +183,11 @@ h6 {
   font-style: normal;
   font-weight: 400;
   line-height: 6rem;
-
-
 }
 
 .taste__the__wild__down__btn {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   background-color: transparent;
 }
 
@@ -199,6 +198,7 @@ h6 {
 
 
 .wildly__loved {
+  scroll-behavior: smooth; 
   background-color: #ED7B49;
 }
 
@@ -368,10 +368,13 @@ h6 {
   width: 60%;
   position: relative;
   top: -200px;
-  right: 200px;
+  right: 0px;
 }
 
+
+
 .first__img {
+  opacity: 0;
   cursor: pointer;
   position: absolute;
   width: 500px;
@@ -379,6 +382,7 @@ h6 {
 }
 
 .second__img {
+  opacity: 0;
   cursor: pointer;
   rotate: -20deg;
   position: absolute;
@@ -387,6 +391,7 @@ h6 {
 }
 
 .third__img {
+  opacity: 0;
   cursor: pointer;
   rotate: 20deg;
   position: absolute;
@@ -547,6 +552,7 @@ h6 {
   padding: 400px 0;
   background-color: hsl(351, 78%, 82%);
   position: relative;
+  overflow-x: hidden;
 }
 
 .the__concept__store__container {
@@ -597,6 +603,16 @@ h6 {
   bottom: 40px;
   left: 40px;
 }
+
+.slider__card__block2 {
+  margin-left: 200px;
+  padding: 100px;
+  width: 60%;
+  position: relative;
+  top: -200px;
+  right: 0px;
+}
+
 
 
 /* ------------------------------ wild halva section ------------------------------------ */
@@ -705,6 +721,7 @@ h6 {
   padding: 400px 0;
   background-color: hsl(351, 78%, 82%);
   position: relative;
+  overflow-x: hidden;
 }
 
 .the__five__treasures__container {
@@ -756,6 +773,16 @@ h6 {
   bottom: 40px;
   left: 40px;
 }
+
+.slider__card__block3 {
+  margin-left: 200px;
+  padding: 100px;
+  width: 60%;
+  position: relative;
+  top: -200px;
+  right: 0px;
+}
+
 
 
 /* --------------------------------- wild recipes section ---------------------------------------- */
