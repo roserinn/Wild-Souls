@@ -1,5 +1,7 @@
+gsap.registerPlugin(ScrollTrigger);
 
 // --------------------------------------------------------
+
 
 const badgeCircle = document.querySelector('.badge__circle');
 const wildlyLovedTitle = document.querySelector('.wildly__loved__title');
@@ -198,5 +200,92 @@ function createElement(tag, attrs = {}, children = []) {
 
 
 
+const imgsSliderCardBlock = document.querySelectorAll('.slider__card__block img');
+
+function cardsAppearance(imgsArray) {
+  imgsArray.forEach((img, index) => {
+    gsap.from(img, {
+      x: 400,
+      opacity: 0,
+      duration: 1,
+      delay: index * .7
+    });
+  })
+}
+cardsAppearance(imgsSliderCardBlock);
+
+let clickFlag = false;
+function cardsAnim(imgsArray) {
+
+  imgsArray.forEach((img, index) => {
+    const imgAnim = gsap.to(img, { x: 400, stagger: 1, opacity: 0, paused: true });
+    const cardsRotateAnim = gsap.to(img, { rotate: 0, duration: 0.3, paused: true });
+
+    img.addEventListener('click', () => {
+      if (index === imgsArray.length - 1) {
+          imgAnim.reverse();
+          cardsRotateAnim.reverse();
+          cardsAppearance(imgsSliderCardBlock);
+      } else {
+          imgAnim.play();
+      }
+      clickFlag = true;
+    });
+
+    img.addEventListener('mouseenter', () => {
+      if (clickFlag === true) {
+        gsap.to(img, { rotate: 0, duration: 0.3 });
+        cardsRotateAnim.play();
+      }
+    });
+  });
+}
+
+cardsAnim(imgsSliderCardBlock);
 
 
+// let clickFlag = false;
+// function handleMouseEnter(element) {
+//   if (clickFlag) {
+//     gsap.to(element, { rotate: 0, duration: 0.3, delay: 0.2 });
+//   }
+// }
+// secondImg.addEventListener('mouseenter', () => {
+//   handleMouseEnter(secondImg);
+// });
+// thirdImg.addEventListener('mouseenter', () => {
+//   handleMouseEnter(thirdImg);
+// });
+// firstImg.addEventListener('click', () => {
+//   clickFlag = true;
+//   setTimeout(() => {
+//     clickFlag = false;
+//     gsap.to(secondImg, { rotate: 0, duration: 0.3 });
+//     gsap.to(thirdImg, { rotate: 0, duration: 0.3, delay: .5});
+//   }, 500);
+// });
+// // const reverseAnim = (img) => {
+// //   gsap.from(img, {x: 400, stagger: 1, opacity: 0})
+// // }
+//   const Anim = (img)=> {
+//   gsap.to(img, {x: 400, stagger: 1, opacity: 0})
+// }
+// firstImg.addEventListener('click', ()=> {
+//   Anim(firstImg)
+// })
+// secondImg.addEventListener('click', ()=> {
+//   Anim(secondImg)
+// })
+// function cardsAppearanceOnClick(imgsArray) {
+//       gsap.from(imgsArray, {
+//     x: 400,
+//     opacity: 1,
+//     duration: 1,
+//   });
+// }
+// thirdImg.addEventListener('click', (event)=> {
+// if (event.target === thirdImg) {
+//   cardsAppearanceOnClick(sliderCardBlock)
+// console.log('click')
+// }
+// })

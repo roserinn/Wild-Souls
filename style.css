@@ -174,9 +174,6 @@ h6 {
 
 }
  
-.main__title__anim{
-
-} 
 .title__row {
   font-family: "Canela Serif Font";
   color: hsl(0, 0%, 0%);
@@ -329,6 +326,7 @@ h6 {
 .our__wild__way {
   padding: 500px 0;
   background-color: hsl(18, 82%, 61%);
+  overflow-x: hidden;
 }
 
 .our__wild__way__container {
@@ -374,12 +372,14 @@ h6 {
 }
 
 .first__img {
+  cursor: pointer;
   position: absolute;
   width: 500px;
   z-index: 3;
 }
 
 .second__img {
+  cursor: pointer;
   rotate: -20deg;
   position: absolute;
   width: 500px;
@@ -387,11 +387,13 @@ h6 {
 }
 
 .third__img {
+  cursor: pointer;
   rotate: 20deg;
   position: absolute;
   width: 500px;
   z-index: 1;
 }
+
 
 
 /* ---------------------------  wild like a nut section ---------------------------------- */
