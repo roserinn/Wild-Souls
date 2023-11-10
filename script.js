@@ -22,6 +22,7 @@ const titleAnim = gsap.from(title, {
   delay: .4
 })
 
+//button anim 
 const appearAnimation = gsap.fromTo(downBtn, {
   opacity: 0,
   y: 10,
@@ -353,12 +354,50 @@ ScrollTrigger.create({
 });
 
 
+// --------------------------- wild like a nut section animation --------------------------------------
+
+
+const almondBlock = document.querySelector('.almond__block');
+const anotherNutsBlock = document.querySelector('.another__nuts__list__block');
+
+const almondBlockAnim = gsap.from(almondBlock, {
+  x: -600,
+  opacity: 0,
+  duration: 1,
+  paused: true,
+  delay: .6
+})
+
+const anotherNutsBlockAnim = gsap.from(anotherNutsBlock, {
+  y: 100,
+  opacity: 0,
+  duration: 1.2,
+  paused: true,
+  delay: 1
+})
+
+ScrollTrigger.create({
+  trigger: ".wild__like__a__nut",
+  start: 'top 100%',
+  end: 'bottom 80%',
+  markers: true,
+  onEnter: () => {
+    almondBlockAnim.play();
+    anotherNutsBlockAnim.play();
+  },
+  onLeaveBack: () => {
+    almondBlockAnim.reverse();
+    anotherNutsBlockAnim.reverse();
+  },
+});
+
+
+
 // --------------------    the Concept Store section animation  ----------------------------------
 
 
-const imgsSliderCardBlock2 = document.querySelectorAll('.slider__card__block2 img');
 
-cardsAppearance(imgsSliderCardBlock2)
+const imgsSliderCardBlock2 = document.querySelectorAll('.slider__card__block2 img');
 cardsAnim(imgsSliderCardBlock2);
 
 // info block animation
@@ -371,6 +410,7 @@ const theConceptStoreTitleAnim = gsap.from(theConceptStoreTitle, {
   y: 100,
   opacity: 0,
   ease: 'back',
+  delay: .7,
   paused: true,
 })
 
@@ -379,7 +419,7 @@ const theConceptStoreTextAnim = gsap.from(theConceptStoreText, {
   opacity: 0,
   ease: 'back',
   paused: true,
-  delay: .2,
+  delay: 1,
 }, ".1")
 
 const theConceptStoreButtonAnim = gsap.from(theConceptStoreButton, {
@@ -387,6 +427,7 @@ const theConceptStoreButtonAnim = gsap.from(theConceptStoreButton, {
   opacity: 0,
   ease: 'back',
   duration: 1,
+  delay: 1.5,
   paused: true
 })
 
@@ -404,13 +445,101 @@ ScrollTrigger.create({
   onLeaveBack: () => {
     theConceptStoreTitleAnim.reverse();
     theConceptStoreTextAnim.reverse();
-    theConceptStoreButton.reverse();
+    theConceptStoreButtonAnim.reverse();
 
   },
 });
 
 
+// --------------------------- wild halva section animation ---------------------------------------
+
+
+const halvaBlock = document.querySelector('.halva__block');
+const giftBlock = document.querySelector('.gift__block');
+
+const halvaBlockAnim = gsap.from(halvaBlock, {
+  x: -600,
+  opacity: 0,
+  duration: 1,
+  paused: true,
+  delay: .6
+})
+
+const giftBlockAnim = gsap.from(giftBlock, {
+  y: 100,
+  opacity: 0,
+  duration: 1.2,
+  paused: true,
+  delay: 1
+})
+
+ScrollTrigger.create({
+  trigger: ".wild__halva",
+  start: 'top 100%',
+  end: 'bottom 80%',
+  markers: true,
+  onEnter: () => {
+    halvaBlockAnim.play();
+    giftBlockAnim.play();
+  },
+  onLeaveBack: () => {
+    halvaBlockAnim.reverse();
+    giftBlockAnim.reverse();
+  },
+});
+
+
+// -------------------- the five treasures section animation ----------------------------------
+
+
 const imgsSliderCardBlock3 = document.querySelectorAll('.slider__card__block3 img')
-cardsAppearance(imgsSliderCardBlock3)
 cardsAnim(imgsSliderCardBlock3);
+
+
+const theFiveTreasuresTitle = document.querySelector('.the__five__treasures__title');
+const theFiveTreasuresText = document.querySelector('.the__five__treasures__text');
+const theFiveTreasuresButton = document.querySelector('.the__five__treasures__btn');
+
+const theFiveTreasuresTitleAnim = gsap.from(theFiveTreasuresTitle, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+  delay: 1
+})
+
+const theFiveTreasuresTextAnim = gsap.from(theFiveTreasuresText, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  paused: true,
+  delay: 1.2,
+}, ".1")
+
+const theFiveTreasuresButtonAnim = gsap.from(theFiveTreasuresButton, {
+  y: 100,
+  opacity: 0,
+  ease: 'back',
+  duration: 1,
+  paused: true,
+  delay: 1.5
+})
+
+ScrollTrigger.create({
+  trigger: ".the__five__treasures",
+  start: 'top 100%',
+  end: 'bottom 80%',
+  markers: true,
+  onEnter: () => {
+    theFiveTreasuresTitleAnim.play();
+    theFiveTreasuresTextAnim.play();
+    theFiveTreasuresButtonAnim.play();
+    cardsAppearance(imgsSliderCardBlock3);
+  },
+  onLeaveBack: () => {
+    theFiveTreasuresTitleAnim.reverse();
+    theFiveTreasuresTextAnim.reverse();
+    theFiveTreasuresButtonAnim.reverse();
+  },
+});
 

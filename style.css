@@ -98,7 +98,7 @@ h6 {
   height: 100%;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
@@ -106,6 +106,19 @@ h6 {
 @font-face {
   font-family: "Canela Serif Font";
   src: url(./fonts/CanelaText-Bold-Trial.otf);
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 10px;
 }
 
 /* --------------------------------- header ------------------------------------- */
@@ -174,7 +187,7 @@ h6 {
   padding-top: 200px;
 
 }
- 
+
 .title__row {
   font-family: "Canela Serif Font";
   color: hsl(0, 0%, 0%);
@@ -198,7 +211,7 @@ h6 {
 
 
 .wildly__loved {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   background-color: #ED7B49;
 }
 
@@ -360,6 +373,7 @@ h6 {
   background: #000;
   color: white;
   padding: 10px 30px;
+  transition: all .5s ease;
 }
 
 .slider__card__block {
@@ -370,8 +384,6 @@ h6 {
   top: -200px;
   right: 0px;
 }
-
-
 
 .first__img {
   opacity: 0;
@@ -824,9 +836,26 @@ h6 {
   margin: 100px 0px;
   display: flex;
   overflow-x: scroll;
+  padding-bottom: 50px;
+
 }
 
+.wild__resipes__slider__row::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+
+
 .wild__recipes__card {
+  cursor: pointer;
   margin: 0px 30px;
 }
 
@@ -922,6 +951,7 @@ small a {
 }
 
 .about__title {
+  font-family: "Canela Serif Font";
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.4rem;
@@ -931,6 +961,7 @@ small a {
 .about__list a {
   color: #000;
   font-size: 1rem;
+  letter-spacing: .1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
@@ -938,7 +969,7 @@ small a {
 }
 
 .about__list li {
-  margin-bottom: 10px
+  margin-bottom: 15px
 }
 
 .about__list li:last-child {
@@ -948,8 +979,7 @@ small a {
 .footer__bottom__running__row {
   display: flex;
   justify-content: space-around;
-  width: 1500px;
-  overflow-x: scroll;
+  width: 3500px;
 }
 
 .email-input {
